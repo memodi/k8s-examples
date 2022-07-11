@@ -19,6 +19,8 @@ COPY index2.html /usr/share/nginx/html/index2.html
 RUN chmod +r /usr/share/nginx/html/index2.html
 COPY auto-reload-nginx.sh /home/auto-reload-nginx.sh
 RUN chmod +x /home/auto-reload-nginx.sh
+RUN mkdir /usr/share/nginx/html/data
+COPY 1K /usr/share/nginx/html/data/
 
 # install inotify
 RUN apt-get update && apt-get install -y inotify-tools
